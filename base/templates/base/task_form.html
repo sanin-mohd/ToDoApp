@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base/main.html'%}
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'tasks'%}">&#8592;Back</a>
+</div>
     <h1>Task Form</h1>
-    <a href="{% url 'tasks'%}">Go back</a>
+    <div class="card-body">
+        <form  method="post" action="">
+            {% csrf_token%}
+            {{form.as_p}}
+            <!--or  {{form}} : horizontal layout ,{{form.as_p}}: vertical layout-->
+            <input type="submit" class="button" name="" value="Add" id="">
+        </form>
+
+    </div>
     
-    <form method="post" action="">
-        {% csrf_token%}
-        {{form.as_p}}
-        <!--or  {{form}} -->
-        <input type="submit" name="" value="submit" id="">
-    </form>
-</body>
-</html>
+    
+{% endblock content %}

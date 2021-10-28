@@ -1,0 +1,24 @@
+{% extends 'base/main.html'%}
+{% block content %}
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+<div class="card-body">
+    <form method="post" action="">
+        {% csrf_token%}
+        <label for="">{{form.username.label}}</label>
+        {{form.username}}
+        <label for="">{{form.password1.label}}</label>
+        {{form.password1}}
+        <label for="">{{form.password2.label}}</label>
+        {{form.password2}}
+        <!--or  {{form}} : horizontal layout ,{{form.as_p}}: vertical layout-->
+        <input style="margin-top: 10px;" type="submit" name="" class="button" value="register" id="">
+    </form>
+    <p>Already have an account? <a href="{% url 'login'%}">Login</a></p>
+
+</div>
+    
+
+
+{% endblock content %}
